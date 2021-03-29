@@ -8,8 +8,8 @@ if(typeof(Storage)){
 
   function checkUsername(){
     console.log('Checking Username...')
-    // let userName = document.
-    document.querySelector('#logIn').style.display = 'none';
+    let username = document.querySelector('#username').nodeValue;
+    console.log(username)
   };
 
   // function newUser(){
