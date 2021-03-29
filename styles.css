@@ -4,7 +4,9 @@
 	box-sizing:border-box;
 	outline:none;
 }
-
+body{
+    background-color: #C3E5AE ;
+}
 main{
 	width: 90%;
 	margin-top:10vh;
@@ -13,22 +15,23 @@ main{
 	display: flex;
 	flex-direction: row;
 	height: 80vh;
+
 }
 
 .sonLeft{
 	position:relative;
 	width: 100%;
 	height:100%;
-	background-color:rgba(255, 1, 1, 0.226);
 }
 
 .sonRight{
 	width: 30%;
 	height: auto;
-	/* background-color:#242424; */
 	border-radius: 20px;
 	padding-left: 10px;
-	background-color:rgba(52, 255, 1, 0.226);
+	background-color: #F1E1A5;
+    border: 2px solid #557571;
+	box-shadow: 10px 5px 5px #557571;
 }
 
 
@@ -37,19 +40,20 @@ main{
 /* LOGIN */
 
 #logIn{
+  display: none;
 	position:absolute;
 	display: flex;
-	/* display:none; */
 	top:35%;
 	left:30%;
 	width:40%;
-	height:30%;
+	height:40%;
 	flex-direction: column;
-	background-color:lavender;
+	background-color:#F1E1A5;
 	border-radius: 20px;
-	border: 2px solid #242424;
-	box-shadow: 10px 5px 5px #242424;
+	border: 2px solid #557571;
+	box-shadow: 10px 5px 5px #557571;
 	padding:20px;
+  color: #f09999;
 }
 
 #title{
@@ -57,7 +61,7 @@ main{
 	font-family:'Anton',sans-serif;
 	text-align:center;
 	font-size:35px;
-	color:#242424;
+	color:#f09999;
 }
 	#rememberTitle{
 		font-family:'Anton',sans-serif;
@@ -66,7 +70,7 @@ main{
 		font-size:15px;
 		font-weight:100;
 		margin-top:auto;
-		color:#242424;
+		color:#f09999;
 	}
 #username{
 	width: 60%;
@@ -78,12 +82,12 @@ main{
 	font-family:'Anton',sans-serif;
 	padding-left:10px;
 	box-sizing:border-box;
-	background-color:#242424;
-	color:lavender;
+	background-color:#C3E5AE;
+	color: #f09999;
 }
 	::placeholder{
 		font-family: 'Anton', sans-serif;
-		color: lavender;
+		color: #f09999;
 		padding-left: 5px;
 		box-sizing: border-box;
 	}
@@ -96,8 +100,8 @@ main{
     margin-bottom: 20px;
     border-radius: 20px;
     font-family: 'Anton', sans-serif;
-    color: lavender;
-    background-color: #242424;
+    color: #f09999;
+    background-color: #C3E5AE;
 }
 
 #loginBttn {
@@ -108,16 +112,94 @@ main{
 /* GAME */
 
 #game{
-	background-color:yellow;
-	width:100%;
+    display: none;
+	background-image:url("img/fondoTopos1.jpg");
+	width: 90%;
 	height:100%;
+    border-radius: 20px;
 }
+#digglet{
+    width: 10%;
+    height: 15%;
+    background-color: black;
+    position: absolute;
+    top: 0%;
+    left: 5%;
+}
+/* LOAD SCREEN */
+#loadScreen{
+    display: block;
+    width:100%;
+	height:100%;
+    border-radius: 20px;
+    text-align: center;
+}
+#loadTitle{
+    top: 35%;
+    font-size: 4rem;
+    color: #557571;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    font-family: 'Anton', sans-serif;
 
+    text-shadow: 0.05em 0 0 #F4BBBB,
+    -0.025em -0.05em 0 #C3E5AE,
+    0.025em 0.05em 0 #557571;
+    animation: glitch 2000ms infinite;
+}
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #F4BBBB,
+      -0.05em -0.025em 0 #C3E5AE,
+      -0.025em 0.05em 0 #557571;
+  }
+
+  15% {
+    text-shadow: -0.05em -0.025em 0 #F4BBBB,
+      0.025em 0.025em 0 #C3E5AE,
+      -0.05em -0.05em 0 #557571;
+  }
+
+  50% {
+    text-shadow: 0.025em 0.05em 0 #F4BBBB,
+      0.05em 0 0 #C3E5AE,
+      0 -0.05em 0 #557571;
+  }
+
+  100% {
+    text-shadow: -0.025em 0 0 #F4BBBB,
+      -0.025em -0.025em 0 #C3E5AE,
+      -0.025em -0.05em 0 #557571;
+  }
+}
+#loadBar{
+    width: 80%;
+    height: 50px;
+    background-color: #557571;
+    position: relative;
+    border-radius: 20px;
+}
+#contLoadBar1{
+    height: 100%;
+    position: absolute;
+    background-image: url(img/loadwallpaper.PNG);
+    background-size:contain;
+    border-radius: 20px;
+}
 
 /* ############ RIGHT BOX */
 
+#scoreTitle{
+    color: #f09999;
+    height: 50px;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+}
+
 .scores{
-    color: lavender;
+    color: #f09999;
+    height: 50px;
     font-family: 'Anton', sans-serif;
     display: flex;
 }
