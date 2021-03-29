@@ -1,0 +1,109 @@
+#fatherMain{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+}
+#mainLogIn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.sonLeft{
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#logIn{
+    display: flex;
+    width: 50%;
+    height: 25%;
+    flex-direction: column;
+    margin: 20%;
+    padding: 0;
+    background-color:lavender;
+    border-radius: 20px;
+    border: 2px solid #242424;
+    box-shadow: 10px 5px 5px #242424;
+
+}
+#title{
+    height: 40%;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    font-size: 35px;
+    color: #242424;
+}
+    #rememberTitle{
+        font-family: 'Anton', sans-serif;
+        margin-left: 3%;
+        height: 20%;
+        font-size: 15px;
+        font-weight: 100;
+        margin-top: auto;
+        color: #242424;
+    }
+#writeName{
+    width: 60%;
+    margin-left: 3%;
+    justify-content: end;
+    margin-top: 0px;
+    height: 20%;
+    border-radius: 20px;
+    font-family: 'Anton', sans-serif;
+    padding-left: 10px;
+    box-sizing: border-box;
+    background-color: #242424;
+    color: lavender;
+}
+    ::placeholder{
+        font-family: 'Anton', sans-serif;
+        color: lavender;
+        padding-left: 10px;
+        box-sizing: border-box;
+
+    }
+#startGame{
+    width: 20%;
+    margin-left: 40%;
+    height: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    font-family: 'Anton', sans-serif;
+    color: lavender;
+    background-color: #242424;
+}
+.sonRight{
+    width: 30%;
+    height: auto;
+    background-color:#242424;
+    border-radius: 20px;
+    margin-top: 2%;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+#scoreTitle{
+    color: lavender;
+    height: 50px;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+}
+
+.scores{
+    color: lavender;
+    height: 50px;
+    font-family: 'Anton', sans-serif;
+    margin-left: 3%;
+    display: flex;
+}
+
+p{
+    margin-left: 10px;
+    padding-top: 6px;
+    box-sizing: border-box;
+}
