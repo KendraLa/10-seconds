@@ -11,7 +11,8 @@ function startGame(){
 		if(user.username == username)
 			user.score = 0;
 			localStorage.setItem('users',JSON.stringify($users));
-			updateScore();
+			timeOut();
+			updateScore(username);
 	});
 	ranking($users);
 };
@@ -52,6 +53,27 @@ function reposicion(){
 	//Set score
 	updateScore();
 };
+
 if(digglet){
 	digglet.addEventListener("click", reposicion);
 };
+
+function timeOut(username){
+	setTimeout(function(){
+		document.getElementById("game").style.display="none";
+		document.getElementById("puntuaciones").style.display="block";
+		$users = JSON.parse(localStorage.getItem('users'));
+		if($users){
+      $users.find(user => {
+				if(user.username == localStorage.getItem('GameName')){
+					document.getElementById("puntuacion").innerHTML = user.score;
+				}
+      });
+    }
+	},10000);
+}
+
+function goHome(){
+	document.getElementById("puntuaciones").style.display="none";
+	document.getElementById("logIn").style.display="block";
+}
