@@ -18,11 +18,10 @@ function updateScore(score){
 	let username = localStorage.getItem('GameName');
 	$users = JSON.parse(localStorage.getItem('users'));
 	$users.find(user => {
-	console.log('before add score');
-		if(user.username == username){
-			console.log('Score ' + username);
-			user.score += score;
-		};
+	if(user.username == username){
+		user.score += score;
+	};
+	localStorage.setItem('users',JSON.stringify($users));
 	});
 };
 
