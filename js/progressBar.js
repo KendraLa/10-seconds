@@ -11,6 +11,7 @@ function move(){
 			document.querySelector(".sonLeft").style.display="block";
 			document.querySelector(".sonRight").style.display="block";
 			document.querySelector('header').style.display='block';
+			document.querySelector('.bestPlayers').style.display='block';
 
 		}
 		else{
