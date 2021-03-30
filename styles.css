@@ -123,29 +123,32 @@ main{
     width: 10%;
     height: 15%;
     background-image: url("");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
     position: absolute;
     top: 0%;
     left: 5%;
-	animation: animationDigglet 2000ms infinite;
+	animation: animationDigglet 1000ms;
 }
 @keyframes animationDigglet{
 	0%{
-		background-image: url("");
+		background-image: url("img/digglet1.png");
 	}
 	20%{
-		background-image: url("");
+		background-image: url("img/digglet2.png");
 	}
 	40%{
-		background-image: url("");
+		background-image: url("img/digglet3.png");
 	}
 	60%{
-		background-image: url("");
+		background-image: url("img/digglet4.png");
 	}
 	80%{
-		background-image: url("");
+		background-image: url("img/digglet5.png");
 	}
 	100%{
-		background-image: url("");
+		background-image: url("img/digglet6.png");
 	}
 }
 
