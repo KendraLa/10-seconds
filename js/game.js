@@ -9,21 +9,16 @@ function startGame(){
 
 	$users.find((user) => {
 		if(user.username == username)
-			score = user.score;
-			updateScore(score);
+			user.score = 0;
+			localStorage.setItem('users',JSON.stringify($users));
+			updateScore();
 	});
+	ranking($users);
 };
 
-function updateScore(score){
-	let username = localStorage.getItem('GameName');
-	$users = JSON.parse(localStorage.getItem('users'));
-	$users.find(user => {
-		if(user.username == username){
-			user.score += score;
-		};
-		localStorage.setItem('users',JSON.stringify($users));
-		ranking($users);
-	});
+function updateScore(){
+	localStorage.setItem('users',JSON.stringify($users));
+	ranking($users);
 };
 
 function puntoAleatorioX(){
@@ -34,14 +29,29 @@ function puntoAleatorioY(){
 	return Math.random() * (85 - 0) + 0;
 };
 
-var digglet = document.getElementById("digglet");
+var digglet = document.querySelector('.digglet');
 
 function reposicion(){
-	let score = 1;
+
+	var digglet = document.querySelector('.digglet');
+	digglet.classList.remove('digglet');
+	void digglet.offsetWidth;
+	digglet.classList.add('digglet');
 
 	digglet.style.top = parseInt(puntoAleatorioY()) + "%";
 	digglet.style.left = parseInt(puntoAleatorioX()) + "%";
 
-	updateScore(score);
+	//Update score
+	let username = localStorage.getItem('GameName');
+	$users = JSON.parse(localStorage.getItem('users'));
+	$users.find(user => {
+		if(user.username == username){
+			user.score += 1;
+		};
+	});
+	//Set score
+	updateScore();
 };
-digglet.addEventListener("click", reposicion);
+if(digglet){
+	digglet.addEventListener("click", reposicion);
+};

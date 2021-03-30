@@ -76,6 +76,7 @@ if(typeof(Storage)){
   //Delete localStorage
   function deleteUsers(){
     localStorage.clear();
+    $users = [];
     //Load ranking
     ranking($users);
   };
