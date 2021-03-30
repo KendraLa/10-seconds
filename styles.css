@@ -119,6 +119,7 @@ main{
 	height:100%;
 	border-radius: 20px;
 }
+
 #digglet{
     width: 10%;
     height: 15%;
@@ -127,6 +128,7 @@ main{
     top: 0%;
     left: 5%;
 }
+
 /* LOAD SCREEN */
 #loadScreen{
 	position:absolute;

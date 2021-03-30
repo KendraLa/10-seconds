@@ -7,27 +7,41 @@ function startGame(){
 	var score = 0;
 	$users = JSON.parse(localStorage.getItem('users'));
 
-	if($users.find(user => user.username == username)){
-		score = user.score;
-		updateScore(score);
-	};
+	$users.find((user) => {
+		if(user.username == username)
+			score = user.score;
+			updateScore(score);
+	});
 };
 
-
-
+function updateScore(score){
+	let username = localStorage.getItem('GameName');
+	$users = JSON.parse(localStorage.getItem('users'));
+	$users.find(user => {
+	console.log('before add score');
+		if(user.username == username){
+			console.log('Score ' + username);
+			user.score += score;
+		};
+	});
+};
 
 function puntoAleatorioX(){
 	return Math.random() * (85 - 5) + 5;
-}
+};
 
 function puntoAleatorioY(){
 	return Math.random() * (85 - 0) + 0;
-}
+};
 
 var digglet = document.getElementById("digglet");
 
 function reposicion(){
+	let score = 1;
+
 	digglet.style.top = parseInt(puntoAleatorioY()) + "%";
 	digglet.style.left = parseInt(puntoAleatorioX()) + "%";
-}
+
+	updateScore(score);
+};
 digglet.addEventListener("click", reposicion);
