@@ -5,7 +5,10 @@ if(typeof(Storage)){
   console.log('Storage available');
 
   //Load ranking
-  // ranking();
+  if(localStorage.getItem('users')){
+    $users = JSON.parse(localStorage.getItem('users'));
+    ranking($users);
+  };
 
   //Username button listener
   var usernameBttn = document.querySelector('#usernameBttn');
@@ -24,22 +27,29 @@ if(typeof(Storage)){
     if(username){
       //Check if array exist
       if(localStorage.getItem('users')){
-        //Load ranking
-        ranking();
-
         $users = JSON.parse(localStorage.getItem('users'));
+        //Load ranking
+        ranking($users);
+
         //Check if username exist
         if($users.find(user => user.username == username)){
           console.log(username + ' already exists.');
+
+          //Setting username
+          localStorage.setItem('GameName',username);
+
+          //Start game
+          startGame();
+
         }else{
           newUser(username);
-        }
+        };
       }else{
         newUser(username);
-      }
+      };
     }else{
-      console.log('Name is mandatory')
-    }
+      console.log('Name is mandatory');
+    };
   };
 
   //Create new user
@@ -52,20 +62,34 @@ if(typeof(Storage)){
     $users.push(user);
     localStorage.setItem('users',JSON.stringify($users));
     console.log(username + ' created.');
+
+    //Setting username
+    localStorage.setItem('GameName',username);
+
+    //Load ranking
+    ranking($users);
+
+    //Start game
+    startGame();
   };
 
   //Delete localStorage
   function deleteUsers(){
     localStorage.clear();
-  }
+    //Load ranking
+    ranking($users);
+  };
 
   //Ranking
-  function ranking(){
-    let rankingPanel = document.querySelector('#sonRight');
-    $users.forEach((user) => {
-      rankingPanel.innerHTML = '<div class="scores"><span>' + user.username + '</span><span>' + user.score + '</span></div>';
-    });
-  }
+  function ranking($users){
+    $users = JSON.parse(localStorage.getItem('users'));
+    document.querySelector('.list').innerHTML = '';
+    if($users){
+      $users.forEach((user) => {
+        document.querySelector('.list').innerHTML += '<div class="scores"><span>' + user.username + '</span><span>' + user.score + '</span></div>';
+      });
+    }
+  };
 
 }else{
   console.log('Storage not available');
