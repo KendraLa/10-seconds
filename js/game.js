@@ -17,8 +17,21 @@ function startGame(){
 };
 
 function updateScore(){
-	localStorage.setItem('users',JSON.stringify($users));
-	ranking($users);
+			score = user.score;
+			updateScore(score);
+	timeOut(score);
+};
+
+function updateScore(score){
+	let username = localStorage.getItem('GameName');
+	$users = JSON.parse(localStorage.getItem('users'));
+	$users.find(user => {
+		if(user.username == username){
+			user.score += score;
+		};
+		localStorage.setItem('users',JSON.stringify($users));
+		ranking($users);
+	});
 };
 
 function puntoAleatorioX(){
@@ -52,6 +65,20 @@ function reposicion(){
 	//Set score
 	updateScore();
 };
+
 if(digglet){
 	digglet.addEventListener("click", reposicion);
 };
+
+function timeOut(score){
+	setTimeout(function(){
+		document.getElementById("game").style.display="none";
+		document.getElementById("puntuaciones").style.display="block";
+		document.getElementById("puntuacion").innerHTML= score;
+	},10000);
+}
+
+function goHome(){
+document.getElementById("puntuaciones").style.display="none";
+document.getElementById("logIn").style.display="block";
+}
