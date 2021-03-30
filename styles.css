@@ -212,7 +212,7 @@ main{
 }
 
 #loadTitle{
-	font-size: 10rem;
+	font-size: 10em;
 	color: #557571;
 	text-transform: uppercase;
 	position: relative;

@@ -11,27 +11,15 @@ function startGame(){
 		if(user.username == username)
 			user.score = 0;
 			localStorage.setItem('users',JSON.stringify($users));
-			updateScore();
+			timeOut();
+			updateScore(username);
 	});
 	ranking($users);
 };
 
 function updateScore(){
-			score = user.score;
-			updateScore(score);
-	timeOut(score);
-};
-
-function updateScore(score){
-	let username = localStorage.getItem('GameName');
-	$users = JSON.parse(localStorage.getItem('users'));
-	$users.find(user => {
-		if(user.username == username){
-			user.score += score;
-		};
-		localStorage.setItem('users',JSON.stringify($users));
-		ranking($users);
-	});
+	localStorage.setItem('users',JSON.stringify($users));
+	ranking($users);
 };
 
 function puntoAleatorioX(){
@@ -70,15 +58,22 @@ if(digglet){
 	digglet.addEventListener("click", reposicion);
 };
 
-function timeOut(score){
+function timeOut(username){
 	setTimeout(function(){
 		document.getElementById("game").style.display="none";
 		document.getElementById("puntuaciones").style.display="block";
-		document.getElementById("puntuacion").innerHTML= score;
+		$users = JSON.parse(localStorage.getItem('users'));
+		if($users){
+      $users.find(user => {
+				if(user.username == localStorage.getItem('GameName')){
+					document.getElementById("puntuacion").innerHTML = user.score;
+				}
+      });
+    }
 	},10000);
 }
 
 function goHome(){
-document.getElementById("puntuaciones").style.display="none";
-document.getElementById("logIn").style.display="block";
+	document.getElementById("puntuaciones").style.display="none";
+	document.getElementById("logIn").style.display="block";
 }
