@@ -1,0 +1,63 @@
+@media (max-width: 400px){
+  #loadScreen{
+    width:90%;
+  }
+
+  #loadTitle{
+    font-size: 7em;
+  }
+
+  header{
+    display:none;
+    background-color: #F1E1A5;
+    border: 5px solid #663931;
+    height:50px;
+    border-radius:20px;
+    z-index:5;
+  }
+
+  header>h1{
+    padding:0px;
+    margin:-5px;
+    color: #f09999;
+    text-align:center;
+    font-family:'Anton',sans-serif;
+  }
+
+  .sonRight{
+    display:none;
+    position:absolute;
+    width:100%;
+    height:93%;
+    top:-1000px;
+    left:0px;
+    z-index:1;
+    transition:all 1s;
+  }
+
+  main{
+    display:flex;
+    flex-direction:column;
+    margin-top:5vh;
+  }
+
+  #logIn{
+    width:90%;
+    left:5%;
+    z-index:0;
+  }
+
+  #puntuaciones{
+    padding-top:40%;
+    margin:0 auto;
+  }
+
+  #titlePuntuacion{
+    font-size:2em;
+  }
+
+  #homeBtn{
+    padding-left: 5%;
+  }
+
+}

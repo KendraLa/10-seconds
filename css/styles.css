@@ -7,6 +7,15 @@
 body{
     background-color: #C3E5AE ;
 }
+
+header{
+	display:none;
+}
+
+header>h1{
+	display:none;
+}
+
 main{
 	width: 90%;
 	margin-top:10vh;
@@ -32,8 +41,10 @@ main{
 	border-radius: 20px;
 	padding-left: 10px;
 	background-color: #F1E1A5;
-    border: 2px solid #557571;
+	border: 5px solid #663931;
 	box-shadow: 10px 5px 5px #557571;
+	padding-top:20px;
+	font-size: x-large;
 }
 
 
@@ -48,27 +59,25 @@ main{
 	top:35%;
 	left:30%;
 	width:40%;
-	height:40%;
 	flex-direction: column;
 	background-color:#F1E1A5;
 	border-radius: 20px;
-	border: 2px solid #557571;
+	border: 5px solid #663931;
 	box-shadow: 10px 5px 5px #557571;
 	padding:20px;
   color: #f09999;
+	font-size: x-large;
 }
 
 #title{
 	font-family:'Anton',sans-serif;
 	text-align:center;
-	font-size:2rem;
 	color:#f09999;
 }
 	#rememberTitle{
 		font-family:'Anton',sans-serif;
 		margin-left:3%;
 		height:20%;
-		font-size:15px;
 		font-weight:100;
 		margin-top:auto;
 		color:#f09999;
@@ -79,7 +88,7 @@ main{
 	justify-content: end;
 	margin-top: 5px;
 	margin-left: 10%;
-	height: 20%;
+	height:50px;
 	border-radius: 20px;
 	font-family:'Anton',sans-serif;
 	padding-left:10px;
@@ -95,14 +104,15 @@ main{
 	}
 
 .button{
-    width: 30%;
-	height:80%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    font-family: 'Anton', sans-serif;
-    color: #f09999;
-    background-color: #C3E5AE;
+	width: 30%;
+	height:50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	font-family: 'Anton', sans-serif;
+	font-size: large;
+	color: #f09999;
+	background-color: #C3E5AE;
 }
 
 #loginBttn {
@@ -119,7 +129,10 @@ main{
 	height:100%;
 	border-radius: 20px;
 	flex-direction: column;
+	border: 5px solid #663931;
+	box-shadow: 10px 5px 5px #557571;
 }
+
 #titlePuntuacion{
 	padding-top: 15%;
 	box-sizing: border-box;
@@ -149,19 +162,20 @@ main{
 #homeBtn{
 	display: flex;
 	width: 30%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    font-family: 'Anton', sans-serif;
-    color: #f09999;
-    background-color: #C3E5AE;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	font-family: 'Anton', sans-serif;
+	color: #f09999;
+	background-color: #C3E5AE;
 	padding-left: 13%;
 	box-sizing: border-box;
+	font-size: x-large;
 }
 
 #game{
 	display: none;
-	background-image:url("img/fondoTopos1.jpg");
+	background-image:url("../img/fondoTopos1.jpg");
 	width: 90%;
 	height:100%;
 	border-radius: 20px;
@@ -183,22 +197,22 @@ main{
 
 @keyframes animationDigglet{
 	0%{
-		background-image: url("img/digglet1.png");
+		background-image: url("../img/digglet1.png");
 	}
 	20%{
-		background-image: url("img/digglet2.png");
+		background-image: url("../img/digglet2.png");
 	}
 	40%{
-		background-image: url("img/digglet3.png");
+		background-image: url("../img/digglet3.png");
 	}
 	60%{
-		background-image: url("img/digglet4.png");
+		background-image: url("../img/digglet4.png");
 	}
 	80%{
-		background-image: url("img/digglet5.png");
+		background-image: url("../img/digglet5.png");
 	}
 	100%{
-		background-image: url("img/digglet6.png");
+		background-image: url("../img/digglet6.png");
 	}
 }
 
@@ -256,12 +270,13 @@ main{
     position: relative;
     border-radius: 20px;
 }
+
 #contLoadBar1{
-    height: 100%;
-    position: absolute;
-    background-image: url(img/loadwallpaper.PNG);
-    background-size:contain;
-    border-radius: 20px;
+	height: 100%;
+	position: absolute;
+	background-image: url(../img/loadwallpaper.PNG);
+	background-size:contain;
+	border-radius: 20px;
 }
 
 /* ############ RIGHT BOX */

@@ -77,3 +77,20 @@ function goHome(){
 	document.getElementById("puntuaciones").style.display="none";
 	document.getElementById("logIn").style.display="block";
 }
+
+//Header mobile function
+
+document.querySelector('header').addEventListener('click',headerAnimation);
+
+var show = 0;
+
+function headerAnimation(){
+	var scoreTab = document.querySelector('.sonRight');
+	if(show == 0){
+		scoreTab.style.top = '50px';
+		show = 1;
+	}else{
+		scoreTab.style.top = '-1000px';
+		show = 0;
+	}
+}
