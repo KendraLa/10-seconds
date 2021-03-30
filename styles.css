@@ -119,18 +119,20 @@ main{
 	border-radius: 20px;
 }
 
-#digglet{
-    width: 10%;
-    height: 15%;
-    background-image: url("");
+.digglet{
+	width: 10%;
+	height: 15%;
+	background-image: url("");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-    position: absolute;
-    top: 0%;
-    left: 5%;
-	animation: animationDigglet 1000ms;
+	position: absolute;
+	top: 0%;
+	left: 5%;
+	animation: animationDigglet 1000ms forwards;
+	-webkit-animation: animationDigglet 300ms forwards;
 }
+
 @keyframes animationDigglet{
 	0%{
 		background-image: url("img/digglet1.png");
