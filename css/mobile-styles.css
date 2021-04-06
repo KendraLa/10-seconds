@@ -8,7 +8,7 @@
   }
 
   header{
-    display:none;
+    visibility:visible;
     background-color: #F1E1A5;
     border: 5px solid #663931;
     height:50px;
@@ -22,6 +22,10 @@
     color: #f09999;
     text-align:center;
     font-family:'Anton',sans-serif;
+  }
+
+  .bestPlayers{
+    display:block;
   }
 
   .sonRight{
